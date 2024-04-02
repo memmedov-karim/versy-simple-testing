@@ -1,0 +1,31 @@
+div{
+    background-color: #F8F8F8; 
+    border-radius: 10px; 
+    display: inline; 
+    justify-content: 'center'; 
+    align-items: 'center'; 
+    flex-direction: 'column';
+}
+
+table {
+    width: 100%;
+    padding: 0 20px 50px 20px;
+}
+
+table tbody td {
+    background-color: white;
+    font-weight: 500;
+    border: 1px solid #d4d4d4;
+    padding: 7px;
+}
+
+th {
+    font-size: 19px;
+    font-weight: 500;
+    color: #959595;
+    padding: 7px;
+}
+
+.fa-circle-info {
+    color: #d4d4d4;
+}
