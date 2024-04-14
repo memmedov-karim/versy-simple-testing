@@ -57,3 +57,20 @@ input{
     cursor: pointer;
     margin-top: 5px;
 }
+.areas-container{
+    background: transparent;
+}
+.selected {
+    cursor: pointer;
+    background-color: #68D442;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+}
+.dontselect{
+    cursor: pointer;
+    background-color: #D4D4D4;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+}
