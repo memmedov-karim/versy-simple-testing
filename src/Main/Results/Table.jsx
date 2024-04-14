@@ -12,6 +12,8 @@ export default function Table({data}) {
                       <th>Təhsil</th>
                       <th>Adı</th>
                       <th>Universitet</th>
+                      <th>Pulsuz bal</th>
+                      <th>Pullu bal</th>
                       <th>Şans</th>
                       <th>İnfo</th>
                   </tr>
@@ -25,6 +27,8 @@ export default function Table({data}) {
                     <td width={30}>DS/ÖD</td>
                     <td>{val.name}</td>
                     <td title={val.university}>{val.unishortname}</td>
+                    <td>{val.freescore}</td>
+                    <td>{val.paidlyscore}</td>
                     <td>{val.percentage}%</td>
                     <td><i className="fa-solid fa-circle-info"></i></td>
                 </tr>
