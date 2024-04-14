@@ -144,6 +144,39 @@ export default function Form({setshowingdata}) {
             favareas: check ? []:allids
         }));
     }
+    const handleDownload = async () => {
+      try {
+        // Make a GET request to the download endpoint
+        const response = await axios.get('http://localhost:8080/download-region-tickets/102', {
+          responseType: 'blob', // Set responseType to blob for file download
+        });
+        console.log(response)
+  
+        // Create a Blob from the response data
+        const blob = new Blob([response.data], { type: 'application/csv' });
+  
+        // Create a URL for the Blob object
+        const url = window.URL.createObjectURL(blob);
+  
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = url;
+  
+        // Set the filename for the downloaded file
+        link.setAttribute('download', 'region_tickets.csv');
+  
+        // Append the link to the document body
+        document.body.appendChild(link);
+  
+        // Trigger a click event on the link to initiate the download
+        link.click();
+  
+        // Remove the temporary link from the document body
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error('Error downloading file:', error);
+      }
+    };
     return (
         <div>
             <form onSubmit={handleOnSubmit}>
