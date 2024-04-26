@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Form({setshowingdata}) {
     const baseUrlL = "http://localhost:5000"
-    const baseUrlD = "https://monkfish-app-iwk8n.ondigitalocean.app"
+    const baseUrlD = "https://sec-bsewh.ondigitalocean.app"
     const url = baseUrlD+"/api/calculate";
     const areas = [
         {
