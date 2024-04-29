@@ -183,10 +183,8 @@ export default function Form({setshowingdata}) {
                 <p>Bölmə</p>
                 <select name="sector" id="Bölmə" value={data.sector} onChange={handleOnChange}>
                 <option >Bolme sec</option>
-                    <option value="Az">Azərbaycan</option>
+                    <option value="Aze">Azərbaycan</option>
                     <option value="Rus">Rus</option>
-                    <option value="Eng">İngilis</option>
-                    <option value="Türk">Türk</option>
                 </select>
 
                 <p>İxtisas qrupu</p>
