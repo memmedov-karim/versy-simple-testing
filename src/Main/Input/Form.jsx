@@ -1,83 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './FormStyle.css';
 import axios from 'axios';
 
 export default function Form({setshowingdata}) {
     const baseUrlL = "http://localhost:5000"
-    const baseUrlD = "https://sec-bsewh.ondigitalocean.app"
-    const url = baseUrlD+"/api/calculate";
-    const areas = [
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa2",
-          "name": "Mühəndislik",
-          "speciality": "1"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa3",
-          "name": "Kompüterləşmə",
-          "speciality": "1"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa4",
-          "name": "Nəqliyyat və Logistika",
-          "speciality": "1"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa5",
-          "name": "Biznes və İdarəetmə",
-          "speciality": "2"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa6",
-          "name": "Maliyyə",
-          "speciality": "2"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa7",
-          "name": "Marketinq",
-          "speciality": "2"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa8",
-          "name": "Turizm",
-          "speciality": "2"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaa9",
-          "name": "Hüquq",
-          "speciality": "3"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaaa",
-          "name": "Dillər",
-          "speciality": "3"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaab",
-          "name": "Din və İlahiyyət",
-          "speciality": "3"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaac",
-          "name": "Müəllimlik",
-          "speciality": "3"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaad",
-          "name": "Təsərrüfat",
-          "speciality": "4"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaae",
-          "name": "Həkimlik",
-          "speciality": "4"
-        },
-        {
-          "_id": "65ce58cd39f0f17ad68fcaaf",
-          "name": "İncəsənət və Dizayn",
-          "speciality": "5"
+    const baseUrlD = "https://sec-bsewh.ondigitalocean.app";
+    const url = baseUrld+"/api/calculate";
+    const [areas,setAreas] = useState([])
+    useEffect(()=>{
+      const ftch = async() => {
+        try {
+          const {data} = await axios.get(baseUrlD+"/api/saheler");
+          console.log(data)
+          setAreas(data.data)
+        } catch (error) {
+          
         }
-      ]
+      }
+      ftch();
+    },[])
     const [mainSelector, setMainSelector] = useState('');
     // const [additionalSelector, setAdditionalSelector] = useState('');
     const [data, setData] = useState({
