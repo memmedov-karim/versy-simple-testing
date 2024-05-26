@@ -15,6 +15,7 @@ export default function Table({data}) {
                       <th>Pulsuz bal</th>
                       <th>Pullu bal</th>
                       <th>Şans</th>
+                    <th>Plan</th>
                       <th>İnfo</th>
                   </tr>
               </thead>
@@ -30,6 +31,7 @@ export default function Table({data}) {
                     <td>{val.freescore}</td>
                     <td>{val.paidlyscore}</td>
                     <td>{val.percentage}%</td>
+                      <td>{val.planplacenumber}</td>
                     <td><i className="fa-solid fa-circle-info"></i></td>
                 </tr>
 
