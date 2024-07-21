@@ -27,7 +27,7 @@ export default function Table({data}) {
                     <td width={90}>{val.specialityid}</td>
                     <td width={30}>DS/ÖD</td>
                     <td>{val.name}</td>
-                    <td title={val.university}>{val.unishortname}</td>
+                    <td title={val.university}>{val.unishortname}<sub>{val?.loc}</sub></td>
                     <td>{val.freescore}</td>
                     <td>{val.paidlyscore}</td>
                     <td>{val.percentage}%</td>
